@@ -58,8 +58,8 @@ export const switchNetwork = async (
           params: [
             {
               chainId: toHex(80001),
-              chainName: "Polygon Mainnet",
-              rpcUrls: ["https://polygon-mumbai.g.alchemy.com/v2/aWibDV94uYYQgHqtHlwXrOVow9kWfbCJ"],
+              chainName: "Polygon Mumbai",
+              rpcUrls: ["https://compatible-convincing-silence.matic-testnet.discover.quiknode.pro/00c2868d40dacc12b1680099724b33ac29fc8173/"],
               nativeCurrency: {
                 decimals: 18,
                 symbol: "MATIC",

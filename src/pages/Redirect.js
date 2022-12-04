@@ -8,7 +8,7 @@ const Redirect = () => {
 
   const connectWallet = async () => {
     try {
-      let provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.g.alchemy.com/v2/aWibDV94uYYQgHqtHlwXrOVow9kWfbCJ");
+      let provider = new ethers.providers.JsonRpcProvider("https://rpc-mumbai.maticvigil.com/");
       let wallet = ethers.Wallet.createRandom();
       wallet = wallet.connect(provider);
 

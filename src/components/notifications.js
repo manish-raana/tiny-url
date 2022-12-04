@@ -1,7 +1,25 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
+import * as PushAPI from "@pushprotocol/restapi";
 const Notifications = () => {
     const [showNotification, SetShowNotification] = useState(false);
+    const [NotificationsList, SetNotificationsList] = useState([]);
+
+  const getNotifications = async() => {
+      try {
+        const notifications = await PushAPI.user.getFeeds({
+          user: "eip155:80001:0xBCed2e69B60bF6fa05408353651f9d4a71355b7B", // user address in CAIP
+          env: "staging",
+          spam: false,
+        }); 
+        console.log("notifications: ", notifications);
+        SetNotificationsList(notifications);
+      } catch (error) {
+        console.log(error)
+      }
+  }
+  useEffect(() => {
+    getNotifications();
+   },[]);
     return (
       <div
         className={
@@ -23,12 +41,20 @@ const Notifications = () => {
           Notifications
         </p>
         <div className="notifications-list h-full overflow-y-scroll" hidden={!showNotification}>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-            <div className="h-28 cursor-pointer border-2 border-gray-100 bg-green-100 rounded-xl shadow-md mx-2 my-3 flex flex-col justify-center items-center transition ease-in-out delay-150 hover:scale-110">
-              <p>A new link generated</p>
-              <p>url: https://google.com/</p>
-            </div>
-          ))}
+          {NotificationsList &&
+            NotificationsList.map((item, index) => (
+              <div
+                key={index}
+                className="h-28 border-2 border-gray-100 bg-green-100 rounded-xl shadow-md mx-2 my-3 flex flex-col justify-center items-center transition ease-in-out delay-150 hover:scale-110"
+              >
+                <p>New Link generated for: </p>
+                <p className="truncate px-5 w-full overflow-hidden cursor-pointer">
+                  <a href={item.notification.body.split("Long Url:")[1]} target="_blank">
+                    {item.notification.body.split("Long Url:")[1]}
+                  </a>
+                </p>
+              </div>
+            ))}
         </div>
       </div>
     );

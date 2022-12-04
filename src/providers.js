@@ -4,9 +4,9 @@ export const providerOptions = {
   walletlink: {
     package: CoinbaseWalletSDK,
     options: {
-      appName: "TinyQR",
+      appName: "TinyUrl",
       rpc: {
-        80001: "https://polygon-mumbai.g.alchemy.com/v2/aWibDV94uYYQgHqtHlwXrOVow9kWfbCJ",
+        80001: "https://compatible-convincing-silence.matic-testnet.discover.quiknode.pro/00c2868d40dacc12b1680099724b33ac29fc8173/",
       },
       chainId: 80001,
     },
