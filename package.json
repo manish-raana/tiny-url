@@ -5,7 +5,7 @@
   "dependencies": {
     "@cityofzion/wallet-connect-sdk-react": "^2.1.2",
     "@coinbase/wallet-sdk": "^3.5.3",
-    "@pushprotocol/restapi": "^0.2.2",
+    "@pushprotocol/restapi": "0.1.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,12 +13,9 @@
     "@walletconnect/types": "^2.0.0-rc.4",
     "@walletconnect/web3-provider": "^1.8.0",
     "@web3-react/core": "^6.1.9",
-    "@web3-react/injected-connector": "^6.0.7",
     "assert": "^2.0.0",
-    "browserify-zlib": "^0.2.0",
-    "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
-    "ethers": "^5.7.1",
+    "ethers": "^5.7.2",
     "fs": "^0.0.1-security",
     "https-browserify": "^1.0.0",
     "os": "^0.1.2",
@@ -36,17 +33,15 @@
     "react-scripts": "5.0.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
-    "upgrade": "^1.1.0",
     "url": "^0.11.0",
-    "util": "^0.12.5",
     "web-vitals": "^2.1.4",
     "web3": "^1.8.0",
     "web3modal": "^1.9.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "GENERATE_SOURCEMAP=false && react-app-rewired start",
+    "build": "GENERATE_SOURCEMAP=false && react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -68,7 +63,6 @@
     ]
   },
   "devDependencies": {
-    "process": "^0.11.10",
     "tailwindcss": "^3.1.8"
   }
 }
