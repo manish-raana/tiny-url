@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react'
-/* import * as PushAPI from "@pushprotocol/restapi"; */
+import * as PushAPI from "@pushprotocol/restapi";
 const Notifications = () => {
     const [showNotification, SetShowNotification] = useState(false);
     const [NotificationsList, SetNotificationsList] = useState([]);
 
   const getNotifications = async() => {
       try {
-        /* const notifications = await PushAPI.user.getFeeds({
+        const notifications = await PushAPI.user.getFeeds({
           user: "eip155:80001:0xBCed2e69B60bF6fa05408353651f9d4a71355b7B", // user address in CAIP
           env: "staging",
           spam: false,
         }); 
-        console.log("notifications: ", notifications); */
-        //SetNotificationsList(notifications);
+        console.log("notifications: ", notifications);
+        SetNotificationsList(notifications);
       } catch (error) {
         console.log(error)
       }
