@@ -50,11 +50,7 @@ const Home = () => {
           <div className="w-1/2">
             <div className="flex w-full justify-end items-center">
               <div className="pl-10">
-                <Wallet
-                  library={library}
-                  setLibrary={setLibrary}
-                  setConnectedChain={setConnectedChain}
-                />
+                <Wallet library={library} setLibrary={setLibrary} setConnectedChain={setConnectedChain} />
               </div>
             </div>
           </div>
@@ -110,40 +106,25 @@ const Home = () => {
         {linkId && (
           <div className="flex text-xs md:text-base px-2 flex-col md:flex-row items-center">
             <div className="my-1 flex items-center space-x-4">
-              Short URL:{" "}
-              <span className="ml-1">{`${window.location.protocol}//${window.location.host}/t/${linkId}`}</span>
-              <button
-                onClick={copyLink}
-                className="hover:bg-blue-500 hover:text-white ml-4 border px-2 py-1 rounded-md"
-              >
+              Short URL: <span className="ml-1">{`${window.location.protocol}//${window.location.host}/t/${linkId}`}</span>
+              <button onClick={copyLink} className="hover:bg-blue-500 hover:text-white ml-4 border px-2 py-1 rounded-md">
                 Copy Link
               </button>
             </div>
             <div className="my-1 md:my-0 md:ml-4 flex items-center space-x-4">
-              <QRCode
-                size={120}
-                value={`${window.location.protocol}//${window.location.host}/t/${linkId}`}
-              />
+              <QRCode size={120} value={`${window.location.protocol}//${window.location.host}/t/${linkId}`} />
             </div>
           </div>
         )}
       </div>
       <div className=" mt-24 w-full lg:w-2/3 m-auto">
         <div className=" my-12 w-full md:w-2/3 mx-auto">
-          <div className="font-[600] text-[16px] md:text-[24px]  text-center text-[#555555]">
-            Recently Shortened URLs
-          </div>
+          <div className="font-[600] text-[16px] md:text-[24px]  text-center text-[#555555]">Recently Shortened URLs</div>
           <div className=" flex mt-4 items-center justify-center text-center bg-[#f5f7f8]  rounded-t-lg text-[10px] md:text-[14px] font-light ">
-            <div className="w-1/3 p-4 items-center justify-center">
-              Long URL
-            </div>
-            <div className="w-1/3 p-4 items-center justify-center">
-              Short URL
-            </div>
+            <div className="w-1/3 p-4 items-center justify-center">Long URL</div>
+            <div className="w-1/3 p-4 items-center justify-center">Short URL</div>
 
-            <div className="w-1/3 p-4 items-center justify-center">
-              View On Polygonscan
-            </div>
+            <div className="w-1/3 p-4 items-center justify-center">View On Polygonscan</div>
           </div>
           <div>
             <Transactions />
@@ -163,7 +144,7 @@ const Home = () => {
         </div>
         <div>
           <a
-            href="https://github.com/sauravtom/ethereum-url-shortener/tree/2022"
+            href="https://github.com/manish-raana/tiny-url"
             target="_blank"
             rel="noreferrer"
             className="hover:underline cursor-pointer flex justify-center items-center"
@@ -174,12 +155,7 @@ const Home = () => {
         </div>
       </div>
       <div className="mb-2 space-x-4 flex text-gray-500 justify-center items-center">
-        <a
-          href="https://metalink.so"
-          target="_blank"
-          rel="noreferrer"
-          className="hover:underline cursor-pointer flex justify-center items-center"
-        >
+        <a href="https://metalink.so" target="_blank" rel="noreferrer" className="hover:underline cursor-pointer flex justify-center items-center">
           Made with ❤️ by Metalink
         </a>
       </div>
